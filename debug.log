@@ -1,0 +1,94 @@
+Script started
+Array
+(
+    [full_name] => hybout
+    [email] => sikonbin@gmailcom
+    [phone] => 78896987
+    [password] => 123123
+    [confirm_password] => 123123
+    [register] => 
+)
+
+DB connected successfully
+Register form detected
+Processed form data:
+Name: hybout
+Email: sikonbin@gmailcom
+Phone: 78896987
+Registration successful for sikonbin@gmailcom
+Script started
+Array
+(
+    [full_name] => HELLO WORLD
+    [email] => samih@gmail.com
+    [phone] => 03354354
+    [password] => 121212
+    [confirm_password] => 121212
+    [register] => 
+)
+
+DB connected successfully
+Register form detected
+Processed form data:
+Name: HELLO WORLD
+Email: samih@gmail.com
+Phone: 03354354
+Registration successful for samih@gmail.com
+Script started
+Array
+(
+    [email] => samih@gmail.com
+    [password] => 121212
+    [login] => 
+)
+
+DB connected successfully
+Reached end of script without processing
+Script started
+Array
+(
+    [email] => mauriceelboustany23@gmail.com
+    [password] => pubgnezlet
+    [login] => 
+)
+
+DB connected successfully
+Reached end of script without processing
+Script started
+Array
+(
+    [email] => bobo@gmail.com
+    [password] => 1212123
+    [login] => 
+)
+
+DB connected successfully
+Reached end of script without processing
+Script started
+Array
+(
+    [full_name] => bobo
+    [email] => bobo@gmail.com
+    [phone] => 767676
+    [password] => 1212123
+    [confirm_password] => 1212123
+    [register] => 
+)
+
+DB connected successfully
+Register form detected
+Processed form data:
+Name: bobo
+Email: bobo@gmail.com
+Phone: 767676
+Registration successful for bobo@gmail.com
+Script started
+Array
+(
+    [email] => bobo@gmail.com
+    [password] => 1212123
+    [login] => 
+)
+
+DB connected successfully
+Reached end of script without processing
