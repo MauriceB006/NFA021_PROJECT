@@ -139,7 +139,7 @@
 </head>
 
    <header class="header">
-        <div>
+        <div class = "header">
             <a href="../indexV51.php" class="back-button">
                 <i class="fas fa-chevron-left"></i> Back
             </a>
