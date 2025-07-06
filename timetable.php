@@ -82,11 +82,7 @@
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        
         body {
             font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
@@ -101,62 +97,8 @@
             text-align: center;
             margin-bottom: 20px;
             padding: 10px;
-        }
+        }    
         
-
-        
-        .application-form {
-            background-color: white;
-            padding: 20px;
-            border-top: 1px solid #eee;
-        }
-        
-        .form-group {
-            margin-bottom: 15px;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        textarea,
-        select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        
-        textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-        
-        .submit-btn {
-            background-color: #10069F;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-        
-        .submit-btn:hover {
-            background-color: #27ae60;
-        }
-        
-        .required {
-            color: #e74c3c;
-        }
-
         .header {
             background-color: var(--primary-color);
             color: white;
