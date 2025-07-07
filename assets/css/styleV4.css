@@ -1964,15 +1964,12 @@ select:hover {
             font-size: var(--font-base);
         }
         
-        @media (max-width: 768px) {
-            .banners-container {
-                grid-template-columns: 1fr;
-            }
+  
             
             .deal-products {
                 flex-direction: column;
             }
-        }
+      
 
         .scroll-controls {
             position: relative;
