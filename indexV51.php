@@ -673,10 +673,6 @@ document.addEventListener('DOMContentLoaded', function() {
     window.startJourney = startJourney;
 });
 
-
-</script>
-
-<script>
  function scrollBanners(direction) {
   // Select the correct scrollable container
   const container = document.querySelector('.horizontal-scroll-wrapper');
