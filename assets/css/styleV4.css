@@ -1747,3 +1747,48 @@ select:hover {
   .cookie-popup-decline:hover {
     background-color: #f5f5f5;
   }
+
+  .scroll-controls {
+    max-width: 1000px; /* Or adjust based on your design */
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.horizontal-scroll-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    white-space: nowrap; /* CRUCIAL: Prevent wrapping */
+}
+
+.banners-container {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 20px;
+    padding: 10px 0;
+    min-width: max-content;
+}
+
+.promo-banner {
+    flex: 0 0 auto;
+    width: 300px;
+}
+
+.scroll-btn {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-btn:hover {
+    background-color: rgb(15, 142, 181);
+}
