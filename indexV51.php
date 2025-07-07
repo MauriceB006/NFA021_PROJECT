@@ -182,7 +182,7 @@ if (isset($_GET['route_used']) && ($_COOKIE['cookie_analytics'] ?? 'false') === 
       </section>
 
       <div class="scroll-controls">
-        <button class="scroll-btn left" onclick="scrollBanners(-1)">&#9664;</button>
+        <button class="scroll-button" onclick="scrollBanners(-1)">&#9664;</button>
         
         <div class="horizontal-scroll-wrapper">
             <div class="banners-container">
@@ -232,7 +232,7 @@ if (isset($_GET['route_used']) && ($_COOKIE['cookie_analytics'] ?? 'false') === 
                 </div>
             </div>
 
-            <button class="scroll-btn right" onclick="scrollBanners(1)">&#9654;</button>
+            <button class="scroll-button" onclick="scrollBanners(1)">&#9654;</button>
 
         </div>
         
