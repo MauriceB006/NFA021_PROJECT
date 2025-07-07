@@ -188,7 +188,7 @@ if (isset($_GET['route_used']) && ($_COOKIE['cookie_analytics'] ?? 'false') === 
             <div class="banners-container">
                   <div class="promo-banner">
                     <a href="https://www.cartlow.com/uae/en/home/iphones-page" class="banner-link" data-promotionid="2855" data-index="3" onclick="viewPromotionEvent(this);">
-                        <img src="assets\images_v5\AUB-LOGO.png"  width="256" height="192" alt="cartlow" class="banner-image">
+                        <img src="assets\images_v5\AUB-LOGO.png"  width="256" height="122" alt="cartlow" class="banner-image">
                         <div class="banner-content">
                             <h3 class="banner-title">XXXX YYYYY</h3>
                             <p class="banner-subtitle"> XX YYY ZZZ OOO</p>
@@ -199,7 +199,7 @@ if (isset($_GET['route_used']) && ($_COOKIE['cookie_analytics'] ?? 'false') === 
 
                   <div class="promo-banner">
                     <a href="https://www.cartlow.com/uae/en/home/iphones-page" class="banner-link" data-promotionid="2855" data-index="3" onclick="viewPromotionEvent(this);">
-                        <img src="assets\images_v5\Lebanese_University_logo.png"  width="256" height="192"  alt="Premium Deals" class="banner-image" width="200">
+                        <img src="assets\images_v5\Lebanese_University_logo.png"  width="256" height="122"  alt="Premium Deals" class="banner-image" width="200">
                         <div class="banner-content">
                             <h3 class="banner-title">XXXX YYYYY</h3>
                             <p class="banner-subtitle"> XXX YYY ZZZ OOO</p>
@@ -210,7 +210,7 @@ if (isset($_GET['route_used']) && ($_COOKIE['cookie_analytics'] ?? 'false') === 
 
                   <div class="promo-banner">
                     <a href="https://www.cartlow.com/uae/en/home/iphones-page" class="banner-link" data-promotionid="2855" data-index="3" onclick="viewPromotionEvent(this);">
-                        <img src="assets\images_v5\WHISHMONEY-test-ad.png" width="256" height="192"  alt="Premium Deals" class="banner-image">
+                        <img src="assets\images_v5\WHISHMONEY-test-ad.png" width="256" height="122"  alt="Premium Deals" class="banner-image">
                         <div class="banner-content">
                             <h3 class="banner-title">XXXX YYYYY</h3>
                             <p class="banner-subtitle"> XXX YYY ZZZ OOO</p>
@@ -221,7 +221,7 @@ if (isset($_GET['route_used']) && ($_COOKIE['cookie_analytics'] ?? 'false') === 
 
                   <div class="promo-banner">
                     <a href="https://www.cartlow.com/uae/en/home/iphones-page" class="banner-link" data-promotionid="2855" data-index="3" onclick="viewPromotionEvent(this);">
-                        <img src="assets\images_v5\OMT-SECOND-PREVIEW.png" alt="Premium Deals" width="256" height="192"  class="banner-image">
+                        <img src="assets\images_v5\OMT-SECOND-PREVIEW.png" alt="Premium Deals" width="256" height="122"  class="banner-image">
                         <div class="banner-content">
                             <h3 class="banner-title">XXXX YYYYY</h3>
                             <p class="banner-subtitle"> XXX YYY ZZZ OOO</p>
