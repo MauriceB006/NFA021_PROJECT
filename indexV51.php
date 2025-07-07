@@ -181,63 +181,7 @@ if (isset($_GET['route_used']) && ($_COOKIE['cookie_analytics'] ?? 'false') === 
         </div>
       </section>
 
-      <div class="scroll-controls">
-        <button class="scroll-button" onclick="scrollBanners(-1)">&#9664;</button>
-        
-        <div class="horizontal-scroll-wrapper">
-            <div class="banners-container">
-                  <div class="promo-banner">
-                    <a href="https://www.cartlow.com/uae/en/home/iphones-page" class="banner-link" data-promotionid="2855" data-index="3" onclick="viewPromotionEvent(this);">
-                        <img src="assets\images_v5\AUB-LOGO.png"  width="256" height="122" alt="cartlow" class="banner-image">
-                        <div class="banner-content">
-                            <h3 class="banner-title">XXXX YYYYY</h3>
-                            <p class="banner-subtitle"> XX YYY ZZZ OOO</p>
-                            <span class="banner-cta">VIEW DEALS</span>
-                        </div>
-                    </a>
-                  </div>
-
-                  <div class="promo-banner">
-                    <a href="https://www.cartlow.com/uae/en/home/iphones-page" class="banner-link" data-promotionid="2855" data-index="3" onclick="viewPromotionEvent(this);">
-                        <img src="assets\images_v5\Lebanese_University_logo.png"  width="256" height="122"  alt="Premium Deals" class="banner-image" width="200">
-                        <div class="banner-content">
-                            <h3 class="banner-title">XXXX YYYYY</h3>
-                            <p class="banner-subtitle"> XXX YYY ZZZ OOO</p>
-                            <span class="banner-cta">VIEW DEALS</span>
-                        </div>
-                    </a>
-                  </div>
-
-                  <div class="promo-banner">
-                    <a href="https://www.cartlow.com/uae/en/home/iphones-page" class="banner-link" data-promotionid="2855" data-index="3" onclick="viewPromotionEvent(this);">
-                        <img src="assets\images_v5\WHISHMONEY-test-ad.png" width="256" height="122"  alt="Premium Deals" class="banner-image">
-                        <div class="banner-content">
-                            <h3 class="banner-title">XXXX YYYYY</h3>
-                            <p class="banner-subtitle"> XXX YYY ZZZ OOO</p>
-                            <span class="banner-cta">VIEW DEALS</span>
-                        </div>
-                    </a>
-                  </div>
-
-                  <div class="promo-banner">
-                    <a href="https://www.cartlow.com/uae/en/home/iphones-page" class="banner-link" data-promotionid="2855" data-index="3" onclick="viewPromotionEvent(this);">
-                        <img src="assets\images_v5\OMT-SECOND-PREVIEW.png" alt="Premium Deals" width="256" height="122"  class="banner-image">
-                        <div class="banner-content">
-                            <h3 class="banner-title">XXXX YYYYY</h3>
-                            <p class="banner-subtitle"> XXX YYY ZZZ OOO</p>
-                            <span class="banner-cta">VIEW DEALS</span>
-                        </div>
-                    </a>
-                  </div>
-                </div>
-            </div>
-
-            <button class="scroll-button" onclick="scrollBanners(1)">&#9654;</button>
-
-        </div>
-        
-      </div>
-
+     
       <!-- ABOUT SECTION -->
       <section class="section about" id="about" aria-label="about">
         <div class="container">
