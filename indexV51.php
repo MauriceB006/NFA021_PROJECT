@@ -391,22 +391,6 @@ if (isset($_GET['route_used']) && ($_COOKIE['cookie_analytics'] ?? 'false') === 
             width: 300px;
         }
 
-        .scroll-btn {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            padding: 12px;
-            font-size: 24px;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 2;
-            margin: 0 10px;
-            transition: background-color 0.3s ease;
-        }
-
-        .scroll-btn:hover {
-            background-color:rgb(15, 142, 181);
-        }
       </style>
 
       <div class="scroll-controls">
