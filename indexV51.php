@@ -901,6 +901,20 @@ document.addEventListener('DOMContentLoaded', function() {
     window.startJourney = startJourney;
 });
 
+  function scrollBanners(direction) {
+    // Select the banners container
+    const container = document.querySelector('.banners-container');
+
+    // Amount to scroll (you can adjust this)
+    const scrollAmount = 300; // pixels
+
+    // Scroll left or right depending on the direction
+    container.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth' // for smooth scrolling
+    });
+  }
+
 </script>
 </body>
 </html>
