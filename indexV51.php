@@ -901,6 +901,10 @@ document.addEventListener('DOMContentLoaded', function() {
     window.startJourney = startJourney;
 });
 
+
+</script>
+
+<script>
   function scrollBanners(direction) {
     // Select the banners container
     const container = document.querySelector('.banners-container');
@@ -914,7 +918,6 @@ document.addEventListener('DOMContentLoaded', function() {
       behavior: 'smooth' // for smooth scrolling
     });
   }
-
 </script>
 </body>
 </html>
