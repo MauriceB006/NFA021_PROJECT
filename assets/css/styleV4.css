@@ -1821,3 +1821,183 @@ select:hover {
         font-size: 20px;
     }
 }
+
+        .banners-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 15px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .promo-banner {
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: white;
+        }
+
+        .promo-banner deal-banner {
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: white;
+        }
+        
+        
+        .promo-banner:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+        
+        .banner-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .banner-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .banner-content {
+            padding: 15px;
+        }
+        
+        .banner-title {
+            font-size: var(--font-xl);
+            font-weight: var(--bold);
+            color: var(--text-heading);
+            margin-bottom: 8px;
+        }
+        
+        .banner-subtitle {
+            font-size: var(--font-lg);
+            color: var(--text-body);
+            margin-bottom: 12px;
+        }
+        
+        .banner-cta {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 8px 16px;
+            border-radius: var(--border-radius);
+            font-weight: var(--semibold);
+            font-size: var(--font-lg);
+            margin-top: 10px;
+        }
+        
+        .banner-footer {
+            font-size: var(--font-base);
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px dashed var(--border-color);
+        }
+        
+        .deal-banner {
+            background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+            padding: 20px;
+            border-radius: var(--card-radius);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .deal-highlight {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            font-weight: var(--bold);
+            border-bottom-left-radius: var(--border-radius);
+        }
+        
+        .deal-title {
+            font-size: var(--font-xl);
+            font-weight: var(--bold);
+            margin-bottom: 5px;
+        }
+        
+        .deal-value {
+            font-size: var(--font-xxl);
+            font-weight: var(--bold);
+            color: var(--primary);
+            line-height: 1;
+            margin: 10px 0;
+        }
+        
+        .deal-products {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .deal-product {
+            flex: 1;
+            background-color: white;
+            padding: 10px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+        }
+        
+        .product-name {
+            font-weight: var(--bold);
+            margin-bottom: 5px;
+        }
+        
+        .product-price {
+            color: var(--primary);
+            font-weight: var(--bold);
+        }
+        
+        .product-discount {
+            color: var(--text-muted);
+            text-decoration: line-through;
+            font-size: var(--font-base);
+        }
+        
+        @media (max-width: 768px) {
+            .banners-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .deal-products {
+                flex-direction: column;
+            }
+        }
+
+        .scroll-controls {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .horizontal-scroll-wrapper {
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            width: 100%;
+        }
+
+        .banners-container {
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            gap: 20px;
+            padding: 10px 0;
+            min-width: max-content;
+        }
+
+        .promo-banner {
+            flex: 0 0 auto;
+            width: 300px;
+        }
