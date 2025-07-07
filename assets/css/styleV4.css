@@ -1785,7 +1785,7 @@ select:hover {
 /* Scroll buttons */
 .scroll-btn {
     background-color: var(--primary);
-    color: white;
+    color: rgb(5, 15, 127);
     border: none;
     padding: 12px;
     font-size: 24px;
