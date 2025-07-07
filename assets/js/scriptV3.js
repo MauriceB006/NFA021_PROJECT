@@ -276,4 +276,23 @@ window.onload = function() {
   };
 };
 
+// moving the banners left and right
+
+function scrollBanners(direction) {
+    const container = document.querySelector('.banners-container');
+    const scrollAmount = 300;
+
+    container.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+    });
+}
+
+function viewPromotionEvent(element) {
+    const promotionId = element.getAttribute('data-promotionid');
+    const index = element.getAttribute('data-index');
+    console.log(`Promotion clicked! ID: ${promotionId}, Index: ${index}`);
+
+    // You can add your analytics code here
+}
 

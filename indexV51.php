@@ -405,7 +405,7 @@ if (isset($_GET['route_used']) && ($_COOKIE['cookie_analytics'] ?? 'false') === 
         }
 
         .scroll-btn:hover {
-            background-color: #3a8f3a;
+            background-color:rgb(15, 142, 181);
         }
       </style>
 
