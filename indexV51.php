@@ -270,7 +270,7 @@ if (isset($_GET['route_used']) && ($_COOKIE['cookie_analytics'] ?? 'false') === 
                 Providing frequent stops to ensure accessibility for all passengers.
               </p>
             </div>
-            <a href="pages\searchplanner.html" class="btn">Read More</a>
+            <a href="pages\timetable.php" class="btn">View Schedule</a>
           </div>
           <h1>Bus Route Journey</h1>
           <select id="route-select" onchange="startJourney()">
