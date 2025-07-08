@@ -158,7 +158,7 @@ if (isset($_GET['route_used']) && ($_COOKIE['cookie_analytics'] ?? 'false') === 
   <main>
     <article>
       <!-- HERO SECTION -->
-      <section class="section hero hero--main" aria-label="home" id="home"
+      <section class="hero hero--full" aria-label="home" id="home"
         style="background-image: url('assets/images_v5/2 IMG_7419.jpg')">
         <div class="container">
           <div class="hero-content">

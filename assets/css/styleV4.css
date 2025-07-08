@@ -1840,15 +1840,23 @@ html, body {
   }
 }
 
-.hero--main {
+.hero--full {
+  width: 100vw;
   position: relative;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  width: 100vw;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
+  padding: 60px 20px; /* Ensure space inside */
 }
+
+.hero--full .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 
