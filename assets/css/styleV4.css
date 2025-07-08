@@ -1841,8 +1841,9 @@ html, body {
 }
 
 .hero--main {
-  width: 100vw; /* Force full viewport width */
-  margin-left: calc(-50vw + 50%); /* Remove container side space */
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
