@@ -1811,3 +1811,31 @@ select:hover {
 }
 
 
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.container,
+.section,
+.about .container,
+.project-list,
+.feature .container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .container,
+  .section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
