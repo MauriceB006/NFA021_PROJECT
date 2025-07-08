@@ -1736,3 +1736,78 @@ select:hover {
   }
 
 
+  /* ==================== GLOBAL RESET ==================== */
+* {
+  box-sizing: border-box;
+}
+
+/* ==================== IMAGES ==================== */
+.img-cover-1 {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+/* ==================== FLEX SECTIONS ON MOBILE ==================== */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  /* About Section */
+  .about .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .about-content {
+    text-align: center;
+  }
+
+  /* Hero section adjustments */
+  .hero-content {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-text {
+    font-size: 1rem;
+  }
+
+  /* Project Cards */
+  .project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .project-card {
+    width: 100%;
+  }
+
+  /* Newsletter form */
+  .newsletter-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .newsletter-form .email-field,
+  .newsletter-btn {
+    width: 100%;
+  }
+
+  /* Buttons */
+  .btn, .btn-outline {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+
