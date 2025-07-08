@@ -185,8 +185,8 @@ body {
 }
 
 .img-cover-1 {
-  width: 500px;      /* or any width you want */
-  height: 500px;     /* same height as width to make it perfectly round */
+  width: 100%;      /* or any width you want */ 
+  height: auto;   /* same height as width to make it perfectly round */
   object-fit: cover; /* makes sure the image covers the circle without squishing */
   border-radius: 50%; /* magic! turns square into a circle */
   overflow: hidden;   /* make sure nothing spills outside */
@@ -401,20 +401,7 @@ body {
   visibility: visible;
   opacity: 1;
 }
-/* Search Bar Container */
-.header-search-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #eef3fc; /* Light blue background */
-  border-radius: 20px;
-  padding: 5px 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  width: 250px; /* Smaller size */
-  height: 40px;
-  margin-top: 10px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
+
 
 /* Search Input */
 .search-input {
