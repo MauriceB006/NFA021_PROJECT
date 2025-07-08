@@ -1839,3 +1839,11 @@ html, body {
     padding-right: 10px;
   }
 }
+
+.hero--main {
+  width: 100vw; /* Force full viewport width */
+  margin-left: calc(-50vw + 50%); /* Remove container side space */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
