@@ -287,7 +287,7 @@ if (isset($_GET['route_used']) && ($_COOKIE['cookie_analytics'] ?? 'false') === 
             </div>
           </div>
           <!-- Button to Display Prices -->
-          <button id="show-price-btn" class="btn" onclick="showPrice()">View Price</button>
+          <button class="btn" onclick="showPrice()">View Price</button>
           
           <!-- Price Display Section -->
           <div id="price-display" style="margin-top: 20px; display: none;">
