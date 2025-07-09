@@ -1781,16 +1781,6 @@ select:hover {
     font-size: 1rem;
   }
 
-  /* Project Cards */
-  .project-list {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .project-card {
-    width: 100%;
-  }
 
   /* Newsletter form */
   .newsletter-form {
