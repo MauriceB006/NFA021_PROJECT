@@ -134,16 +134,36 @@
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
                     <tr class="hover:bg-gray-50 transition-colors duration-150">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">101 - Downtown Express</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">2.50</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Line B1</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">200.000 LBP</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">15-20</td>
                         <td class="px-6 py-4 text-sm text-gray-500">Peak hours every 15 min.</td>
                     </tr>
                     <tr class="hover:bg-gray-50 transition-colors duration-150">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">205 - Coastal Route</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">3.00</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Line B2</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">200.000</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">30-45</td>
                         <td class="px-6 py-4 text-sm text-gray-500">Scenic route, less frequent.</td>
+                    </tr>
+
+                    <tr class="hover:bg-gray-50 transition-colors duration-150">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Line B3</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">180.000</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">30-45</td>
+                        <td class="px-6 py-4 text-sm text-gray-500">If Any Delays Occur Please Contact Support.</td>
+                    </tr>
+                    
+
+                    <tr class="hover:bg-gray-50 transition-colors duration-150">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Line ML3</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">250.000</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">30-45</td>
+                        <td class="px-6 py-4 text-sm text-gray-500">New Route</td>
+                    </tr>
+                    
+
+                    <tr class="hover:bg-gray-50 transition-colors duration-150">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">All Lines Start At 7:00 AM and stops at 7:00 PM</td>
                     </tr>
                     <!-- Add more rows as needed -->
                 </tbody>
