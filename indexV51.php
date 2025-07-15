@@ -302,20 +302,13 @@ if (isset($_GET['route_used']) && ($_COOKIE['cookie_analytics'] ?? 'false') === 
         style="background-image: url('assets\images_v5\inside2.jpg'); background-repeat: no-repeat;; background-size: cover; background-position: center;">
         <div class="container">
           <div class="title-wrapper">
-            <h1 class="section-subtitle" style="font-size: 100px;">Bus Line Updates</h1>
-            <h2 class="h2 section-title" style="color: rgb(134, 166, 192);">Stay informed about delays, cancellations, or schedule changes.</h2>
+            <h1 class="section-subtitle" style="font-size: 100px;">Bus Line Map</h1>
+            <h2 class="h2 section-title" style="color: rgb(134, 166, 192);">Explore all bus lines, stops, and schedules in one place.</h2>
           </div>
 
           <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1xj7EirT1nTXvtXv52VAkjy3f8OpAZkU" width="100%" height="600"></iframe>
 
-          <ul class="update-list">
-            <li class="update-item">
-              <strong>Alert:</strong> Line B1 is delayed due to traffic.
-            </li>
-            <li class="update-item">
-              <strong>Notice:</strong> Line ML3 will not operate on Sunday.
-            </li>
-          </ul>
+
         </div>
       </section>
       <!-- PROJECT SECTION -->
