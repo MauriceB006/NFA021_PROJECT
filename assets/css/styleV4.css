@@ -403,48 +403,6 @@ body {
 }
 
 
-/* Search Input */
-.search-input {
-  flex: 1;
-  border: none;
-  outline: none;
-  background: none;
-  font-size: 14px;
-  padding: 5px;
-  color: #333;
-  border-radius: 15px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Search Button */
-.search-button {
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Hover Effects */
-.header-search-bar:hover {
-  background-color: #e3ecf9; /* Light blue hover effect */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.search-button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-  transform: scale(1.1); /* Button enlarges slightly */
-}
-
-.search-input:hover {
-  background-color: #f1f9ff; /* Input changes to soft blue */
-  color: #007BFF;
-}
-
-
 
 
 
