@@ -1,65 +1,100 @@
 <?php
+session_start();
+
 // Database configuration
 $host = 'localhost';
 $dbname = 'project';
 $username = 'root';
 $password = '';
 
-// Enable error reporting
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// Verify user is logged in
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
 
-// Check if form was submitted
+$user_id = $_SESSION['user_id'];
+$error = '';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
-        // Validate inputs
-        $required_fields = ['name', 'email', 'phone', 'address'];
-        foreach ($required_fields as $field) {
-            if (empty($_POST[$field])) {
-                throw new Exception("All fields are required");
-            }
+        // Verify all required fields
+        if (empty($_POST['password']) || empty($_POST['address'])) {
+            throw new Exception("Password and address are required");
         }
 
-        $name = htmlspecialchars(trim($_POST['name']));
-        $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
-        $phone = htmlspecialchars(trim($_POST['phone']));
+        $input_password = $_POST['password'];
         $address = htmlspecialchars(trim($_POST['address']));
 
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            throw new Exception("Invalid email format");
-        }
-
-        // Create connection
+        // Connect to database
         $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        // Insert data
+        // 1. Verify password matches user_id
+        $stmt = $conn->prepare("SELECT user_id FROM users WHERE user_id = :user_id AND password1 = :password");
+        $stmt->execute([
+            ':user_id' => $user_id,
+            ':password' => $input_password // Note: In production, use password_verify() with hashed passwords
+        ]);
+
+        if (!$stmt->fetch()) {
+            throw new Exception("Invalid password for this user ID");
+        }
+
+        // 2. Insert application with verified user_id
         $stmt = $conn->prepare("INSERT INTO bus_card_applications 
-                              (name, email, phone, address) 
-                              VALUES (:name, :email, :phone, :address)");
+                              (user_id, address) 
+                              VALUES (:user_id, :address)");
         
         $stmt->execute([
-            ':name' => $name,
-            ':email' => $email,
-            ':phone' => $phone,
+            ':user_id' => $user_id,
             ':address' => $address
         ]);
 
-        // Success
-        header("Location: success.html");
+        // Success - redirect to confirmation
+        header("Location: application_success.php");
         exit();
 
     } catch(PDOException $e) {
         $error = "Database error: " . $e->getMessage();
     } catch(Exception $e) {
-        $error = "Error: " . $e->getMessage();
+        $error = $e->getMessage();
     }
 }
 ?>
 
-<!-- Display errors on the same page if you prefer -->
-<?php if (!empty($error)): ?>
-    <div style="color: red; padding: 10px; margin: 10px 0; border: 1px solid red;">
-        <?php echo htmlspecialchars($error); ?>
-    </div>
-<?php endif; ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bus Card Application</title>
+</head>
+<body>
+    <h1>Apply for Bus Card</h1>
+    
+    <?php if ($error): ?>
+        <div style="color:red; padding:10px; margin:10px 0; border:1px solid red;">
+            <?= htmlspecialchars($error) ?>
+        </div>
+    <?php endif; ?>
+    
+    <form method="post">
+        <div>
+            <label>Your User ID:</label>
+            <input type="text" value="<?= htmlspecialchars($user_id) ?>" readonly>
+            <small>(Automatically assigned, cannot be changed)</small>
+        </div>
+        
+        <div>
+            <label for="password">Your Password:</label>
+            <input type="password" name="password" id="password" required>
+        </div>
+        
+        <div>
+            <label for="address">Your Address:</label>
+            <textarea name="address" id="address" rows="4" required></textarea>
+        </div>
+        
+        <button type="submit">Submit Application</button>
+    </form>
+</body>
+</html>
