@@ -356,7 +356,7 @@ if (isset($_GET['route_used']) && ($_COOKIE['cookie_analytics'] ?? 'false') === 
                 <div class="card-content">
                   <p class="card-tag">Payment & Bus Card</p>
                   <h3 class="h3">
-                    <a href="pages\paymentV3.html" class="card-title">Apply for a bus card</a>
+                    <a href="pages\paymentV3.php" class="card-title">Apply for a bus card</a>
                   </h3>
                   <a href="pages\paymentV3.html" class="card-link">click here</a>
                 </div>
