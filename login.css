@@ -21,6 +21,42 @@ body {
     to { opacity: 1; }
 }
 
+.back-button {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 10;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.error-message p{
+    color: darkred;
+    font-size: 13px;
+    margin-top: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+.error-message.field-error {
+    margin: -10px 0 2px 0;
+    padding: 5px 10px;
+    font-size: 0.8em;
+}
+
 h1 {
     font-weight: 700;
     letter-spacing: -1.5px;
@@ -60,11 +96,15 @@ p {
     cursor: pointer;
   }
   
-  #eyeIcon {
+  #registerEyeIcon {
     color: gray; 
     font-size: 18px; 
     padding-bottom: 60px;
+ }
 
+   #loginEyeIcon {
+    color: gray; 
+    font-size: 18px; 
  }
 
 a {
@@ -134,7 +174,7 @@ button:focus {
 }
 
 button.ghost {
-    background-color: rgba(225, 225, 225, 0.2);
+    background-color: rgba(225, 225, 225, 0.429); /* 225, 225, 225, 0.2*/
     border: 2px solid #fff;
     color: #fff;
 }
@@ -255,13 +295,8 @@ input {
 }
 
 .overlay {
-    background-image: url(bus.jpeg);
-    /* background: linear-gradient(135deg, rgba(10, 25, 47, 0.9), rgba(30, 58, 95, 0.8)); */
+    background: url('images_v5/bus1.jpeg')  center/cover no-repeat;
     backdrop-filter: blur(8px);
-    color: #ffffff;      
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0 0;
     color: whitesmoke;
     position: relative;
     left: -100%;
@@ -269,20 +304,18 @@ input {
     width: 200%;
     transform: translateX(0);
     transition: transform 0.6s ease-in-out;
+    z-index: 1;
 }
 
 .overlay::before {
-    content: "";
+    content: '';
     position: absolute;
-    left: 0;
-    right: 0;
     top: 0;
-    bottom: 0;
-    background: linear-gradient(
-        to top,
-        rgba(46, 77, 143, 0.477) 40%,
-        rgba(6, 109, 141, 0)
-    );
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Lighter overlay for better image visibility */
+    z-index: -1;
 }
 
 .container.right-panel-active .overlay {
