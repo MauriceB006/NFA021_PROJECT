@@ -12,8 +12,8 @@ if (!isset($_SESSION['user_id'])) {
 // Database configuration
 $servername = "localhost";
 $username = "root";
-$password = "ratrout";
-$dbname = "actc_transportpublique_latest";
+$password = "";
+$dbname = "project";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
