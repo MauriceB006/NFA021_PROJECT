@@ -177,7 +177,7 @@
 </div>
         <button type="submit">Reset Password</button>
     </form> 
-    <a href="login.php">Back to login</a>
+    <a href="sign_in.php">Back to login</a>
   </div>
 
   <script>
