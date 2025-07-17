@@ -124,7 +124,7 @@ if (isset($_GET['route_used']) && ($_COOKIE['cookie_analytics'] ?? 'false') === 
             </a>
           </li>
           <li class="navbar-item">
-            <a href="#about" class="navbar-link" data-nav-link>
+            <a href="#updates-map" class="navbar-link" data-nav-link>
               <span>Lines</span>
             </a>
           </li>
@@ -138,11 +138,11 @@ if (isset($_GET['route_used']) && ($_COOKIE['cookie_analytics'] ?? 'false') === 
               <span>Contact</span>
             </a>
           </li>
-          <li class="navbar-item">
+          <!-- <li class="navbar-item">
             <a href="pages\career.php" class="navbar-link" data-nav-link>
               <span>Career</span>
             </a>
-          </li>
+          </li> -->
         </ul>
       </nav>
   
@@ -298,7 +298,7 @@ if (isset($_GET['route_used']) && ($_COOKIE['cookie_analytics'] ?? 'false') === 
       </section>
       
       <!-- UPDATES SECTION -->
-      <section class="section updates-map" class="updates-map" aria-label="updates-map"
+      <section class="section updates-map" class="updates-map" id="updates-map" aria-label="updates-map"
         style="background-image: url('assets\images_v5\inside2.jpg'); background-repeat: no-repeat;; background-size: cover; background-position: center;">
         <div class="container">
           <div class="title-wrapper">
