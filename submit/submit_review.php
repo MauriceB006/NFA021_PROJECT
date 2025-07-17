@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 // Enable error reporting for debugging
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -21,9 +23,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // For demonstration, using a static user_id - in real app, get from session
-        $user_id = 1; // Replace with actual user ID from your authentication system
+        // Check if logged in
+    
+// Redirect if not logged in
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../sign_in.php");
+    exit();
+}
+$user_id = $_SESSION['user_id'];
+
         
         $line_id = htmlspecialchars(trim($_POST['line']));
+        // After connecting to $conn
+        $conn = new PDO("mysql:host=localhost;dbname=project", "root", "");
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$checkLine = $conn->prepare("SELECT COUNT(*) FROM buslines1 WHERE line_id = ?");
+$checkLine->execute([$line_id]);
+if ($checkLine->fetchColumn() == 0) {
+    throw new Exception("🚫 The selected bus line does not exist.");
+}
+
+
+
         $rating = intval($_POST['rating']);
         $comment = htmlspecialchars(trim($_POST['comment']));
         $travel_date = $_POST['date'];
@@ -39,12 +60,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             throw new Exception("Invalid date format");
         }
 
-        // Create database connection
-        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        
 
         // Prepare and execute the insert statement
-        $stmt = $conn->prepare("INSERT INTO reviews12 
+        $stmt = $conn->prepare("INSERT INTO bus_reviews 
                               (user_id, line_id, rating, comment, travel_date, travel_time) 
                               VALUES (:user_id, :line_id, :rating, :comment, :travel_date, :travel_time)");
         
@@ -58,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ]);
 
         // Success - redirect to indexV3.1.php
-        header("Location: ../indexV51.php");
+        header("Location: ../success.html");
         exit();
 
     } catch(PDOException $e) {
