@@ -96,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cookie_action'])) {
 <?php if (!$cookiesAccepted): ?>
 <div id="cookie-popup" class="cookie-popup-overlay">
     <div class="cookie-popup-box">
-        <p>We use cookies to ensure you get the best experience on our website. <a href="privacy-policy.html" target="_blank">Learn more</a></p>
+        <p>We use cookies to ensure you get the best experience on our website. <a href="pages/privacy.html" target="_blank">Learn more</a></p>
         <div class="cookie-buttons">
             <button id="reject-cookies">Reject</button>
             <button id="accept-cookies">Accept All</button>
