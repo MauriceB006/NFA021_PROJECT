@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,35 +9,70 @@
     <link rel="stylesheet" href="login.css" />
 </head>
 <body>
+        <a href="indexV51.php" class="back-button">
+            <i class="fas fa-chevron-left"></i> Back
+        </a>
+
     <div class="container" id="container">
         <!-- Registration Form -->
         <div class="form-container register-container">
             <form action="process_auth.php" method="post">
                 <h1>Create an account</h1>
-                <?php if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])): ?>
+                <?php if (isset($_SESSION['errors']['general'])): ?>
                     <div class="error-message">
-                        <?php foreach ($_SESSION['errors'] as $error): ?>
-                            <p><?php echo htmlspecialchars($error); ?></p>
-                        <?php endforeach; ?>
-                        <?php unset($_SESSION['errors']); ?>
+                        <p><?php echo htmlspecialchars($_SESSION['errors']['general']); ?></p>
                     </div>
                 <?php endif; ?>
                 
                 <input type="text" name="full_name" placeholder="Full Name" required 
-                       >
+                       value="<?php echo htmlspecialchars($_SESSION['form_data']['full_name'] ?? ''); ?>">
+                <?php if (isset($_SESSION['errors']['full_name'])): ?>
+                    <div class="error-message field-error">
+                        <p><?php echo htmlspecialchars($_SESSION['errors']['full_name']); ?></p>
+                    </div>
+                <?php endif; ?>
+                
                 <input type="email" name="email" placeholder="Email" required 
-                       >
+                       value="<?php echo htmlspecialchars($_SESSION['form_data']['email'] ?? ''); ?>">
+                <?php if (isset($_SESSION['errors']['email'])): ?>
+                    <div class="error-message field-error">
+                        <p><?php echo htmlspecialchars($_SESSION['errors']['email']); ?></p>
+                    </div>
+                <?php endif; ?>
+                
                 <input type="tel" name="phone" placeholder="Phone Number" required 
-                       >
-                <input type="password" name="password" id="password" placeholder="Password" required>
+                       value="<?php echo htmlspecialchars($_SESSION['form_data']['phone'] ?? ''); ?>">
+                <?php if (isset($_SESSION['errors']['phone'])): ?>
+                    <div class="error-message field-error">
+                        <p><?php echo htmlspecialchars($_SESSION['errors']['phone']); ?></p>
+                    </div>
+                <?php endif; ?>
+                
+                <input type="password" name="password" id="registerPassword" placeholder="Password" required>
                 <div class="input-container">
-                    <span id="togglePassword" onclick="togglePassword()" style="cursor: pointer;" class="icon-container">
-                        <i class="fa fa-eye" id="eyeIcon"></i>
+                    <span onclick="toggleRegisterPassword()" style="cursor: pointer;" class="icon-container">
+                        <i class="fa fa-eye" id="registerEyeIcon"></i>
                     </span>
                 </div>
+                <?php if (isset($_SESSION['errors']['password'])): ?>
+                    <div class="error-message field-error">
+                        <p><?php echo htmlspecialchars($_SESSION['errors']['password']); ?></p>
+                    </div>
+                <?php endif; ?>
+                
                 <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                <?php if (isset($_SESSION['errors']['confirm_password'])): ?>
+                    <div class="error-message field-error">
+                        <p><?php echo htmlspecialchars($_SESSION['errors']['confirm_password']); ?></p>
+                    </div>
+                <?php endif; ?>
+                
                 <button type="submit" name="register">Create</button>
-                <?php unset($_SESSION['form_data']); ?>
+                
+                <?php 
+                unset($_SESSION['errors']);
+                unset($_SESSION['form_data']); 
+                ?>
             </form>
         </div>
 
@@ -52,14 +88,19 @@
                 <?php endif; ?>
                 
                 <input type="email" name="email" placeholder="Email" required>
-                <input type="password" name="password" placeholder="Password" required>
+                <div class="input-container">
+                    <input type="password" name="password" id="loginPassword" placeholder="Password" required>
+                    <span onclick="toggleLoginPassword()" class="icon-container" style="cursor: pointer;">
+                        <i class="fa fa-eye" id="loginEyeIcon"></i>
+                    </span>
+                </div>
                 <div class="content">
                     <div class="checkbox">
                         <input type="checkbox" name="remember" id="remember">
                         <label for="remember">Remember me</label>
                     </div>
                     <div class="pass-link">
-                        <a href="forgot_password.php">Forgot password?</a>
+                        <a href="authentication/forgot_password.php">Forgot password?</a>
                     </div>
                 </div>
                 <button type="submit" name="login">Login</button>
