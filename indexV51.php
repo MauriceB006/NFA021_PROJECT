@@ -442,14 +442,14 @@ if (isset($_GET['route_used']) && ($_COOKIE['cookie_analytics'] ?? 'false') === 
             <!-- REMOVED AS PER ACTC REQUEST -->
           </figure>
 
-          <div class="newsletter-content">
+          <!-- <div class="newsletter-content">
             <h2 class="h2 section-title">Subscribe for offers and news</h2>
             <form action="" class="newsletter-form">
               <input type="email" name="email_address" placeholder="Enter Your Email" aria-label="email"
                 class="email-field">
               <button type="submit" class="newsletter-btn">Subscribe Now</button>
             </form>
-          </div>
+          </div> -->
         </div>
       </section>
     </article>
