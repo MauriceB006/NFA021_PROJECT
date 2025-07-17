@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../assets/css/login.css" />
 </head>
 <body>
-        <a href="indexV51.php" class="back-button">
+        <a href="../indexV51.php" class="back-button">
             <i class="fas fa-chevron-left"></i> Back
         </a>
 
