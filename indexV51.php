@@ -519,6 +519,10 @@ if (isset($_GET['route_used']) && ($_COOKIE['cookie_analytics'] ?? 'false') === 
           <li>
             <a href="pages\terms.html" class="footer-link">Terms & Condition</a>
           </li>
+             <li>
+            <a href="admin_redirect.php" class="footer-link">Admins</a>
+
+          </li>
         </ul>
       </div>
 
