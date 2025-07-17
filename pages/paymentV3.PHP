@@ -1,3 +1,5 @@
+
+
 <?php
 session_start();
 
@@ -86,23 +88,32 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 40px;
+      padding: 0;
       background: linear-gradient(135deg, var(--green-blue-crayola), var(--prussian-blue), var(--indigo-dye), var(--dark-orange));
       color: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       min-height: 100vh;
     }
 
+    .main-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
     .container {
       max-width: 600px;
       width: 100%;
-      padding: 30px;
+      padding: 50px;
       background: linear-gradient(135deg, var(--dark-orange), var(--indigo-dye), var(--prussian-blue));
       border-radius: 10px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
       animation: fadeIn 1s ease-in-out;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
     }
 
     h1 {
@@ -173,6 +184,43 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       border: 1px solid #ff9999;
       border-radius: 5px;
     }
+        
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 0;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .back-button {
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+        }
+        
+        .back-button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
 
     @keyframes fadeIn {
       from {
@@ -196,6 +244,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   </style>
 </head>
 <body>
+  <header class="header">
+    <div class="header-content">
+        <a href="../indexV51.php" class="back-button">
+            <i class="fas fa-chevron-left"></i> Back
+        </a>
+        <h1>
+            <img src="../assets/images_v5/ACTC LOGO -02 SMALL.png" class="logo" alt="ACTC Public Transport" style="height: 50px;">
+        </h1>
+        <div style="width: 80px;"></div> <!-- Spacer for balance -->
+    </div>
+</header>
+<div class="main-wrapper">
   <div class="container">
     <h1>Apply for a Bus Card</h1>
 
@@ -223,5 +283,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       <button type="submit" class="btn">Submit Application</button>
     </form>
   </div>
+</div>
 </body>
 </html>
