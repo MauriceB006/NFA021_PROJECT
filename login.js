@@ -10,17 +10,29 @@ loginButton.addEventListener("click", () => {
     container.classList.remove("right-panel-active");
 });
 
-function togglePassword() {
-    const passwordField = document.getElementById('password');
-    const eyeIcon = document.getElementById('eyeIcon');
-    
-    if (passwordField.type === 'password') {
+function toggleRegisterPassword() {
+const passwordField = document.getElementById('registerPassword');
+const eyeIcon = document.getElementById('registerEyeIcon');
+  if (passwordField.type === 'password') {
+    passwordField.type = 'text';
+    eyeIcon.classList.remove('fa-eye');
+    eyeIcon.classList.add('fa-eye-slash');
+  }else{
+    passwordField.type = 'password';
+    eyeIcon.classList.remove('fa-eye-slash');
+    eyeIcon.classList.add('fa-eye');
+  }
+}
+function toggleLoginPassword() {
+const passwordField = document.getElementById('loginPassword');
+const eyeIcon = document.getElementById('loginEyeIcon');
+  if (passwordField.type === 'password') {
       passwordField.type = 'text';
       eyeIcon.classList.remove('fa-eye');
       eyeIcon.classList.add('fa-eye-slash');
-    } else {
+  }else{
       passwordField.type = 'password';
       eyeIcon.classList.remove('fa-eye-slash');
       eyeIcon.classList.add('fa-eye');
-    }
   }
+}
