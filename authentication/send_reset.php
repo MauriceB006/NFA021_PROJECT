@@ -96,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->isHTML(true);
         $mail->Subject = 'Reset Your Password';
         $mail->Body    = "Click the link below to reset your password:<br><br>
-                          <a href='$resetLink'>$resetLink</a><br><br>
+                          <a href='$resetLink'>Reset Your Password</a><br><br>
                           This link will expire in 1 hour.";
 
         $mail->send();
