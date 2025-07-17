@@ -55,7 +55,7 @@ try {
         }
         
         // If login fails
-        $_SESSION['login_error'] = "Invalid email or password";
+        $_SESSION['login_error'] = "Incorrect email or password";
         header("Location: sign_in.php");
         exit();
     }
@@ -64,12 +64,45 @@ try {
     if (isset($_POST['register'])) {
         $_SESSION['errors'] = [];
         
-        // [Keep all your existing validation code...]
+        //handles validation for everything in register/sign in form
+        $full_name = trim($_POST['full_name'] ?? '');
+        if(strlen($full_name) < 2){
+            $_SESSION['errors']['full_name'] = "Name must contain at least 2 characters.";
+        }
+
+        $email = filter_var($_POST['email'] ?? '', FILTER_SANITIZE_EMAIL);
+        $emailPattern = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL) || !preg_match($emailPattern, $email)) {
+            $_SESSION['errors']['email'] = "Please enter a valid email address.";
+        } else {
+            $stmt = $conn->prepare("SELECT user_id FROM users WHERE email = ?");
+            $stmt->bind_param("s", $email);
+            $stmt->execute();
+            if ($stmt->get_result()->num_rows > 0) {
+                $_SESSION['errors']['email'] = "This email is already registered.";
+            }
+        }
+
+        $password = $_POST['password'] ?? '';
+        if (!isValidPassword($password)) {
+            $_SESSION['errors']['password'] = "Password must be at least 8 characters long and include uppercase, lowercase, number, and special character.";
+        }
+
+        $confirm_password = $_POST['confirm_password'] ?? '';
+        if ($password !== $confirm_password) {
+            $_SESSION['errors']['confirm_password'] = "Passwords do not match.";
+        }
+
+        $phone = $_POST['phone'] ?? '';
+        if (!empty($phone) && !check_phone($phone)) {
+            $_SESSION['errors']['phone'] = "Phone number must begin with a prefix followed by 6 digits (no spaces).";
+        }
         
+
         // If no errors, register user
         if (empty($_SESSION['errors'])) {
             $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
-            $phone = !empty($_POST['phone']) ? $_POST['phone'] : null;
+            $phone = !empty($phone) ? $phone : null;
             
             // This is correct for password1 column
             $stmt = $conn->prepare("INSERT INTO users (full_name, email, phone, password1) VALUES (?, ?, ?, ?)");
@@ -77,16 +110,16 @@ try {
                 throw new Exception("Prepare failed: " . $conn->error);
             }
             
-            $stmt->bind_param("ssss", $_POST['full_name'], $_POST['email'], $phone, $hashedPassword);
+            $stmt->bind_param("ssss", $full_name, $email, $phone, $hashedPassword);
             
             if ($stmt->execute()) {
                 // Success - log in user
                 $_SESSION['user_id'] = $stmt->insert_id;
-                $_SESSION['user_name'] = $_POST['full_name'];
+                $_SESSION['user_name'] = $full_name;
                 // Right before the redirect, add:
-error_log("Debug: Login successful, redirecting to indexV51.php");
-var_dump($_SESSION);
-exit();
+                // error_log("Debug: Login successful, redirecting to indexV51.php");
+                // var_dump($_SESSION);
+                // exit();  //this is for debugging while developping
                 header("Location: indexV51.php");
                 exit();
             } else {
@@ -107,5 +140,20 @@ exit();
     if (isset($conn)) {
         $conn->close();
     }
+}
+
+function isValidPassword($password) {
+    $passLength = strlen($password) >= 8;
+    $uppercase = preg_match('@[A-Z]@', $password);
+    $lowercase = preg_match('@[a-z]@', $password);
+    $number = preg_match('@[0-9]@', $password);
+    $specialChars = preg_match('@[^\w]@', $password);
+
+    return $passLength && $uppercase && $lowercase && $number && $specialChars;
+}
+
+function check_phone($phone) {
+    $patternNumb = '/^(03|3|70|71|76|81)\d{6}$/';
+    return preg_match($patternNumb, $phone);
 }
 ?>
