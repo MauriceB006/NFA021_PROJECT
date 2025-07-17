@@ -425,7 +425,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_status'])) {
                             <?php while($row = $res->fetch_assoc()): ?>
                                 <tr>
                                     <td><?= $row['item_id'] ?></td>
-                                    <td><?= $row['user_id'] ?></td>
+                                    <td><?= isset($row['user_id']) && $row['user_id'] !== null ? $row['user_id'] : '—' ?></td>
                                     <td><?= $row['line_id'] ?></td>
                                     <td><?= $row['item_description'] ?></td>
                                     <td><?= $row['lost_date'] ?></td>
@@ -450,17 +450,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_status'])) {
             <div class="section-content" id="messages-content">
                 <?php if ($res->num_rows > 0): ?>
                     <table>
-                        <thead>
-                            <tr><th>ID</th><th>Name</th><th>Email</th><th>Message</th><th>Received On</th></tr>
+                       <thead>
+                            <tr><th>ID</th><th>User ID</th><th>Subject</th><th>Message</th><th>status</th><th>Received On</th></tr>
                         </thead>
                         <tbody>
                             <?php while($row = $res->fetch_assoc()): ?>
                                 <tr>
                                     <td><?= $row['message_id'] ?></td>
-                                    <td><?= $row['user_id'] ?></td>
-                                    <td><?= $row['email'] ?></td>
+                                    <td><?= isset($row['user_id']) && $row['user_id'] !== null ? $row['user_id'] : '—' ?></td>
+
                                     <td><?= $row['subject'] ?></td>
-                                    <td><?= $row['submitted_on'] ?></td>
+                                    <td><?= $row['message'] ?></td>
+                                    <td>
+                                    <form class="status-form" method="post">
+                                        <input type="hidden" name="table" value="reports">
+                                        <input type="hidden" name="id" value="<?= $row['status'] ?>">
+                                        <input type="hidden" name="id_field" value="status">
+                                        <select name="status" class="status-select">
+                                            <option value="Pending" <?= $row['status'] == 'Pending' ? 'selected' : '' ?>>Pending</option>
+                                            <option value="Approved" <?= $row['status'] == 'Approved' ? 'selected' : '' ?>>Approved</option>
+                                            <option value="Rejected" <?= $row['status'] == 'Rejected' ? 'selected' : '' ?>>Rejected</option>
+                                            <option value="Resolved" <?= $row['status'] == 'Resolved' ? 'selected' : '' ?>>Resolved</option>
+                                        </select>
+                                        <button type="submit" name="update_status" class="status-btn">Update</button>
+                                    </form>
+                                </td>
+                                    <td><?= $row['created_at'] ?></td>
                                 </tr>
                             <?php endwhile; ?>
                         </tbody>
