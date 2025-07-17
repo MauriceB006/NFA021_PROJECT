@@ -375,7 +375,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_status'])) {
         </div>
         
         <?php
-        $res = $conn->query("SELECT * FROM reviews12");
+       $res = $conn->query("SELECT * FROM bus_reviews");
         ?>
         <div class="database-section">
             <div class="section-header" onclick="toggleSection('reviews')">
