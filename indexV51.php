@@ -89,7 +89,7 @@ if (isset($_GET['route_used']) && ($_COOKIE['cookie_analytics'] ?? 'false') === 
     <div class="container">
   
       <h1>
-        <a href="indexV51.html">
+        <a href="indexV51.php">
           <img src="assets\images_v5\ACTC LOGO -02 SMALL.png" class="logo" alt="ACTC Public Transport">
         </a>
       </h1>
@@ -460,7 +460,7 @@ if (isset($_GET['route_used']) && ($_COOKIE['cookie_analytics'] ?? 'false') === 
     <div class="container">
       <div class="footer-top section">
         <div class="footer-brand">
-          <a href="indexV51.html">
+          <a href="indexV51.php">
             <img src="assets\images_v5\ACTC LOGO -01.png" class="logo" alt="ACTC Public Transport">
           </a>
 
