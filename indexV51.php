@@ -306,7 +306,7 @@ if (isset($_GET['route_used']) && ($_COOKIE['cookie_analytics'] ?? 'false') === 
             <h2 class="h2 section-title" style="color: rgb(134, 166, 192);">Explore all bus lines, stops, and schedules in one place.</h2>
           </div>
 
-          <iframe src="https://www.google.com/maps/d/u/0/edit?mid=1hnN01yhLhJ2NdzCbcGjPo9g7o4dNyo8&usp=sharing" width="100%" height="600"></iframe>
+          <iframe src="https://www.google.com/maps/d/u/0/edit?mid=1hnN01yhLhJ2NdzCbcGjPo9g7o4dNyo8&ll=33.94004600655033%2C35.821384228634685&z=9" width="100%" height="600"></iframe>
 
 
         </div>
