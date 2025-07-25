@@ -6,7 +6,7 @@ ini_set('display_errors', 1);
 // Database configuration
 $servername = "localhost";
 $username = "root";
-$password = "ratrout";
+$password = "ratroot";
 $dbname = "project";
 
 try {
