@@ -1,0 +1,274 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passenger Reporting System</title>
+  <style>/* Define Primary Colors */
+    :root {
+      --green-blue-crayola: hsl(244, 59%, 30%);
+      --prussian-blue: hsl(202, 72%, 15%);
+      --indigo-dye: hsl(202, 64%, 26%);
+      --dark-orange: hsl(244, 89%, 17%);
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, var(--green-blue-crayola), var(--prussian-blue), var(--indigo-dye), var(--dark-orange)); /* Gradient using provided colors */
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    
+    /* Form Container */
+    .container {
+      max-width: 800px; /* Increased width */
+      width: 100%;
+      padding: 20px;
+      margin-top: 50px; /* Added margin from the top */
+      background: linear-gradient(135deg, var(--dark-orange), var(--indigo-dye), var(--prussian-blue), var(--green-blue-crayola)); /* Opposite gradient for the container */
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeIn 1s ease-in-out;
+    }
+    
+    .container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+    }
+    
+    /* Header *//* Header */
+h1 {
+  text-align: center;
+  color: #ffffff; /* Set the text color to white */
+  margin-bottom: 20px;
+  animation: slideIn 0.7s ease-out;
+}
+
+    
+    /* Form Inputs & Labels */
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+    
+    input, textarea, select {
+      width: 95%;
+      padding: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 5px;
+      font-size: 14px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    input:hover, textarea:hover, select:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    
+    input:focus, textarea:focus, select:focus {
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 8px var(--dark-orange); /* Glow matches the gradient */
+      outline: none;
+    }
+    
+    /* Radio Buttons */
+    .radio-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    
+    /* Submit Button */
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background-color: var(--green-blue-crayola); /* Matches the gradient */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .btn:hover {
+      background-color: var(--dark-orange); /* Matches one of the gradient colors */
+      transform: scale(1.05);
+    }
+    
+    .btn:active {
+      transform: scale(1);
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes slideIn {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+    /* Default Select Styling */
+select {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.1); /* Initial default background */
+  color: #ffffff; /* White text */
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Styling for Options */
+option {
+  background: rgba(0, 0, 0, 0.85); /* Default option background */
+  color: #ffffff; /* Default text color */
+  padding: 5px;
+}
+
+/* Dynamic Background Colors for Specific Options When Pressed */
+option[value="Line B1"]:focus,
+option[value="Line B1"]:hover {
+  background: hsl(244, 59%, 30%); /* Specific background for Line B1 */
+}
+
+option[value="Line B2"]:focus,
+option[value="Line B2"]:hover {
+  background: hsl(202, 72%, 15%); /* Specific background for Line B2 */
+}
+
+option[value="Line B3"]:focus,
+option[value="Line B3"]:hover {
+  background: hsl(202, 64%, 26%); /* Specific background for Line B3 */
+}
+
+option[value="Line ML3"]:focus,
+option[value="Line ML3"]:hover {
+  background: hsl(244, 89%, 17%); /* Specific background for Line ML3 */
+}
+
+    /* Radio Group Styling */
+.radio-group {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Adds spacing between the buttons */
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer; /* Makes the label clickable */
+}
+
+input[type="radio"] {
+  appearance: none; /* Hides the default radio button */
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ffffff;
+  border-radius: 50%; /* Makes it circular */
+  background: transparent;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked {
+  background: linear-gradient(135deg, var(--dark-orange), var(--green-blue-crayola));
+  box-shadow: 0 0 5px var(--dark-orange);
+}
+
+input[type="radio"]:focus {
+  outline: none;
+  box-shadow: 0 0 8px var(--dark-orange);
+}
+
+
+
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Passenger Reporting System</h1>
+    <form action="report.php" method="post">
+      <div class="form-group">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group">
+        <label for="contact">Contact Info:</label>
+        <input type="text" id="contact" name="contact" placeholder="Enter your contact info" required>
+      </div>
+      <div class="form-group">
+        <label for="line">Line:</label>
+        <select id="line" name="line">
+          <option value="1">Line B1</option>
+          <option value="2">Line B2</option>
+          <option value="3">Line B3</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="date">Date of Incident:</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+      <div class="form-group">
+        <label for="time">Time of Incident:</label>
+        <input type="time" id="time" name="time" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Incident Description:</label>
+        <textarea id="description" name="description" rows="5" placeholder="Provide a detailed description" required></textarea>
+      </div>
+      <div class="form-group">
+        <label>Make this report public:</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" id="public-yes" name="public" value="yes">
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" id="public-no" name="public" value="no" checked>
+            No
+          </label>
+        </div>
+      </div>
+      
+      <button type="submit" class="btn">Submit Report</button>
+    </form>
+  </div>
+</body>
+</html>
+
