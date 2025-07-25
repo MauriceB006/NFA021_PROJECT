@@ -58,6 +58,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_status'])) {
             color: var(--dark);
             line-height: 1.6;
         }
+        .back-button {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  background-color: transparent;
+  color: black;
+  border: 2px solid black;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 10;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -237,6 +259,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_status'])) {
     </style>
 </head>
 <body>
+        <a href="indexV51.php" class="back-button">
+            <i class="fas fa-chevron-left"></i> Back
+        </a>
     <div class="container">
         <header>
             <h1>Bus System Database Visualizer</h1>
