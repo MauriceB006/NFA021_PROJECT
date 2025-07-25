@@ -33,12 +33,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       font-family: Arial, sans-serif;
       background: linear-gradient(135deg, hsl(244, 59%, 30%), hsl(202, 72%, 15%));
       color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       margin: 0;
-    }
+      padding: 0;
+    } 
+        .main-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
     .login-box {
       background: rgba(255, 255, 255, 0.1);
       padding: 30px;
@@ -81,9 +85,58 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       color: red;
       margin-bottom: 10px;
     }
+            
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 0;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .back-button {
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+        }
+        
+        .back-button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
   </style>
 </head>
 <body>
+    <header class="header">
+    <div class="header-content">
+        <a href="indexV51.php" class="back-button">
+            <i class="fas fa-chevron-left"></i> Back
+        </a>
+        <h1>
+            <img src="assets/images_v5/ACTC LOGO -02 SMALL.png" class="logo" alt="ACTC Public Transport" style="height: 50px;">
+        </h1>
+        <div style="width: 80px;"></div>
+    </div>
+</header>
+<div class="main-wrapper">
   <div class="login-box">
     <h2>Admin Access</h2>
     <?php if ($error): ?>
@@ -95,5 +148,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       <button type="submit" class="btn">Login</button>
     </form>
   </div>
+</div>
 </body>
 </html>
